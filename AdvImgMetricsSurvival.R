@@ -69,7 +69,7 @@ library(glmnet)
 
 ## Input files
 imagingMetricsFile <- 'SPORE_CPMG_FINAL_DATA_STEPHANIE.csv'
-survivalFile <- 'SPORE_DATA_022715_Full Data.csv'
+survivalFile <- 'SPORE_DATA_022715_Full_Data.csv'
 
 #################### MAIN ####################
 
@@ -87,7 +87,7 @@ mergedData <- buildDataStructure(imagingData, survivalData)
 casesByMetric <- optimizeVariables(mergedData, 'TTP')
 
 #pick independent variables by cutoff number
-cutoff <- 100
+cutoff <- 80
 independentVariables <- casesByMetric[which(casesByMetric$cases > cutoff),]$metric
 
 # build compatible variable matrix, x, and response vector, y 
